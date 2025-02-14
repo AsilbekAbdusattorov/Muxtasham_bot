@@ -173,9 +173,7 @@ bot.on("text", (ctx) => {
 });
 
 bot.action(/room_(\d+)/, (ctx) => {
-  ctx.session.room = `${ctx.session.lang === "uz" ? "Xona" : "Room"} ${
-    ctx.match[1]
-  }`;
+  ctx.session.room = `${ctx.session.lang === "uz" ? "Xona" : "Room"} ${ctx.match[1]}`;
   ctx.session.step = "waiting_for_name";
 
   const messages = {
